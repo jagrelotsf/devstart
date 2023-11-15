@@ -22,8 +22,8 @@ jobs:
 
     - name: Install Dependencies
       run: |
-        sfdx plugins:install sfdx-git-delta
-        sfdx plugins:install force-completion
+        sf plugins:install sfdx-git-delta
+        sf plugins:install force-completion
 
     - name: Authenticate to Salesforce Org
       run: |
