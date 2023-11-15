@@ -23,8 +23,7 @@ jobs:
 
     - name: Authenticate to Salesforce Org
       run: |
-        sfdx auth:jwt:grant --clientid ${{ secrets.SFDX_CLIENT_ID }} --jwtkeyfile ./server.key --username ${{ secrets.SFDX_USERNAME }} --setdefaultdevhubusername --setalias my-hub-org
-
+        sf org login jwt --client-id${{ secrets.SFDX_CLIENT_ID }} --jwt-key-file ./server.key --username ${{ secrets.SFDX_USERNAME }}  --alias my-hub-org
     - name: Deploy to Salesforce Org
       run: |
         # Add your deployment steps here
