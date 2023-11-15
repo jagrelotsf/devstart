@@ -20,10 +20,6 @@ jobs:
         tar xJf sf-linux-x64.tar.xz -C ~/cli/sf --strip-components 1
         export PATH=~/cli/sf/bin:$PATH
 
-    - name: Install Dependencies
-      run: |
-        sf plugins install sfdx-git-delta
-        sf plugins install force-completion
 
     - name: Authenticate to Salesforce Org
       run: |
