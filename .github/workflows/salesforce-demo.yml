@@ -1,7 +1,7 @@
 name: Salesforce Manual Validation
 
 on:
-  [push]:
+  push:
     branches:
       - dev
       - master
