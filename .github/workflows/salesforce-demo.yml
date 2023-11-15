@@ -16,7 +16,7 @@ jobs:
     - name: Install Salesforce CLI
       run: |
         wget https://developer.salesforce.com/media/salesforce-cli/sf/channels/stable/sf-linux-x64.tar.xz
-        sudo mkdir ~/cli/sf
+        mkdir ~/cli/sf
         tar xJf sf-linux-x64.tar.xz -C ~/cli/sf --strip-components 1
         export PATH=~/cli/sf/bin:$PATH
 
