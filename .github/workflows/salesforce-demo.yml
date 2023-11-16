@@ -19,11 +19,13 @@ jobs:
         mkdir -p ~/cli/sf
         tar xJf sf-linux-x64.tar.xz -C ~/cli/sf --strip-components 1
         export PATH=~/cli/sf/bin:$PATH
+        sf --version
 
 
     - name: Authenticate to Salesforce Org
       run: |
-        sfdx auth:jwt:grant --clientid ${{ secrets.SFDX_CLIENT_ID }} --jwtkeyfile ./server.key --username ${{ secrets.SFDX_USERNAME }} --setdefaultdevhubusername --setalias my-hub-org
+        sf org login jwt --client-id ${{ secrets.SFDX_CLIENT_ID }}G --jwt-key-file /Users/jdoe/JWT/server.key --username ${{ secrets.SFDX_USERNAME }} --alias my-hub-org
+        sf --version
     - name: Deploy to Salesforce Org
       run: |
         # Add your deployment steps here
