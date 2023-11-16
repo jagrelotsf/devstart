@@ -19,24 +19,10 @@ jobs:
         mkdir -p ~/cli/sf
         tar xJf sf-linux-x64.tar.xz -C cli/sf --strip-components 1
         export PATH=$GITHUB_WORKSPACE/cli/sf/bin:$PATH
-        echo sf --version
-
-    - name: Debug PATH
-      run: | 
-        echo "PATH=$PATH"
-
-
 
     - name: Authenticate to Salesforce Org
       run: |
-        sf --version
-        sf org login jwt --client-id ${{ secrets.SFDX_CLIENT_ID }}G --jwt-key-file /Users/jdoe/JWT/server.key --username ${{ secrets.SFDX_USERNAME }} --alias my-hub-org
-        sf --version
-    - name: Deploy to Salesforce Org
-      run: |
-        # Add your deployment steps here
-        # For example:
-        # sfdx force:source:deploy -p force-app/main/default -u my-hub-org
+        echo sf --version
 
 
     
