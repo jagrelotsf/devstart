@@ -21,6 +21,11 @@ jobs:
         export PATH=$PWD/cli/sf/bin:$PATH
         echo sf --version
 
+    - name: Debug PATH
+      run: | 
+        echo "PATH=$PATH"
+
+
 
     - name: Authenticate to Salesforce Org
       run: |
