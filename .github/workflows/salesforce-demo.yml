@@ -24,6 +24,7 @@ jobs:
 
     - name: Authenticate to Salesforce Org
       run: |
+        sf --version
         sf org login jwt --client-id ${{ secrets.SFDX_CLIENT_ID }}G --jwt-key-file /Users/jdoe/JWT/server.key --username ${{ secrets.SFDX_USERNAME }} --alias my-hub-org
         sf --version
     - name: Deploy to Salesforce Org
